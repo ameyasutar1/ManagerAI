@@ -9,7 +9,7 @@
     <meta name="description" content="Manager.AI: Revolutionize your team management with AI-powered real-time updates, transcription, and collaboration tools.">
 </head>
 <body>
-    <header>
+    <header id="main-header">
         <div class="logo">
             Manager.AI
         </div>
@@ -99,5 +99,15 @@
     </section>
 
     <script src="js/scripts.js"></script>
+    <script>
+        window.addEventListener('scroll', function() {
+            var header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('header-small');
+            } else {
+                header.classList.remove('header-small');
+            }
+        });
+    </script>
 </body>
 </html>
