@@ -36,7 +36,12 @@ header {
     position: fixed;
     width: 100%;
     z-index: 1000;
-    transition: background-color 0.3s ease, padding 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+header.header-small {
+    padding: 10px 20px;
+    background-color: rgba(31, 31, 31, 0.95);
 }
 
 .logo {
@@ -336,6 +341,10 @@ h1, h2, h3 {
         padding: 15px;
     }
 
+    header.header-small {
+        padding: 10px;
+    }
+
     nav ul {
         margin-top: 15px;
         justify-content: center;
@@ -346,7 +355,7 @@ h1, h2, h3 {
     }
 
     .hero h1 {
-        font-size: 2em;
+        font-size: 1.8em;
     }
 
     .hero p {
@@ -384,11 +393,21 @@ h1, h2, h3 {
     .contact-container p {
         font-size: 0.9em;
     }
+
+    .cta-buttons .btn {
+        font-size: 0.8em;
+        padding: 10px 15px;
+    }
+
+    .cta-buttons .btn i {
+        font-size: 14px;
+        margin-right: 5px;
+    }
 }
 
 @media (max-width: 480px) {
     .hero h1 {
-        font-size: 1.8em;
+        font-size: 1.5em;
     }
 
     .hero p {
@@ -409,5 +428,15 @@ h1, h2, h3 {
 
     .contact-container h2 {
         font-size: 1.6em;
+    }
+
+    .cta-buttons .btn {
+        font-size: 0.7em;
+        padding: 8px 12px;
+    }
+
+    .cta-buttons .btn i {
+        font-size: 12px;
+        margin-right: 3px;
     }
 }
