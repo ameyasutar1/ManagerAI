@@ -30,6 +30,7 @@ header {
     backdrop-filter: blur(10px);
     padding: 20px 40px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     position: fixed;
@@ -53,10 +54,11 @@ header {
 nav ul {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    margin-left: 30px;
+    margin: 10px 15px;
 }
 
 nav ul li a {
@@ -72,10 +74,12 @@ nav ul li a:hover {
 
 .cta-buttons {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .cta-buttons .btn {
-    margin-left: 15px;
+    margin: 10px;
 }
 
 .btn {
@@ -116,42 +120,43 @@ nav ul li a:hover {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 0 20px;
+    padding: 60px 20px;
 }
 
 .hero-content {
     max-width: 800px;
+    width: 100%;
 }
 
 .hero h1 {
-    font-size: 3.5em;
+    font-size: 2.5em;
     margin-bottom: 20px;
     animation: fadeInUp 1s ease-out;
 }
 
 .hero p {
     margin: 15px 0 25px 0;
-    font-size: 1.2em;
+    font-size: 1.1em;
     animation: fadeInUp 1s ease-out 0.5s;
     animation-fill-mode: both;
 }
 
 .features {
-    padding: 80px 40px;
+    padding: 60px 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
     background-color: #1a1a1a;
 }
 
 .feature {
     background-color: var(--feature-bg-color);
-    padding: 30px;
+    padding: 25px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -164,9 +169,9 @@ nav ul li a:hover {
 }
 
 .feature i {
-    font-size: 3em;
+    font-size: 2.5em;
     color: var(--primary-color);
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
@@ -178,11 +183,13 @@ nav ul li a:hover {
 .feature h2 {
     margin-bottom: 15px;
     color: var(--primary-color);
+    font-size: 1.5em;
 }
 
 .feature p {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     color: var(--feature-text-color);
+    font-size: 0.9em;
 }
 
 @keyframes fadeInUp {
@@ -196,37 +203,8 @@ nav ul li a:hover {
     }
 }
 
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        padding: 20px;
-    }
-
-    nav ul {
-        margin-top: 20px;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    .cta-buttons {
-        margin-top: 20px;
-    }
-
-    .hero h1 {
-        font-size: 2.5em;
-    }
-
-    .features {
-        padding: 60px 20px;
-    }
-}
-
 .video-section {
-    padding: 80px 40px;
+    padding: 60px 20px;
     background-color: var(--background-color);
     text-align: center;
 }
@@ -239,14 +217,14 @@ nav ul li a:hover {
 
 .video-container h2 {
     color: var(--primary-color);
-    font-size: 2.5em;
-    margin-bottom: 40px;
+    font-size: 2em;
+    margin-bottom: 30px;
     animation: fadeInUp 1s ease-out;
 }
 
 .video-container video {
     width: 100%;
-    max-width: 1000px;
+    max-width: 800px;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -255,21 +233,6 @@ nav ul li a:hover {
 .video-container video:hover {
     transform: scale(1.02);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-}
-
-@media (max-width: 768px) {
-    .video-section {
-        padding: 40px 20px;
-    }
-
-    .video-container h2 {
-        font-size: 2em;
-        margin-bottom: 30px;
-    }
-
-    .video-container video {
-        border-radius: 10px;
-    }
 }
 
 .video-container video::-webkit-media-controls {
@@ -295,23 +258,19 @@ nav ul li a:hover {
     color: var(--text-color);
 }
 
-/* Smooth scrolling for the entire page */
 html {
     scroll-behavior: smooth;
 }
 
-/* Improve accessibility */
 .btn:focus, a:focus {
     outline: 2px solid var(--primary-color);
     outline-offset: 2px;
 }
 
-/* Add a subtle gradient to the background for more depth */
 body {
     background: linear-gradient(to bottom, var(--background-color), #1a1a1a);
 }
 
-/* Add a nice hover effect to all interactive elements */
 a, .btn, .feature, .video-container video {
     transition: all 0.3s ease;
 }
@@ -320,22 +279,135 @@ a:hover, .btn:hover, .feature:hover, .video-container video:hover {
     filter: brightness(1.1);
 }
 
-/* Add a subtle text shadow to headings for better readability */
 h1, h2, h3 {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-/* Improve the contrast of the feature text */
 .feature p {
     color: #e0e0e0;
 }
 
-/* Add a subtle border to the features for better separation */
 .feature {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Add a nice hover effect to the logo */
 .logo:hover {
     text-shadow: 0 0 10px var(--primary-color);
+}
+
+.contact-section {
+    padding: 60px 20px;
+    background-color: var(--feature-bg-color);
+    color: var(--text-color);
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-container h2 {
+    color: var(--primary-color);
+    font-size: 2em;
+    margin-bottom: 25px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.contact-container p {
+    margin-bottom: 15px;
+    font-size: 1em;
+}
+
+.contact-container a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-container a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    nav ul {
+        margin-top: 15px;
+        justify-content: center;
+    }
+
+    .cta-buttons {
+        margin-top: 15px;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .features {
+        padding: 40px 15px;
+    }
+
+    .feature {
+        padding: 20px;
+    }
+
+    .feature h2 {
+        font-size: 1.3em;
+    }
+
+    .video-section {
+        padding: 40px 15px;
+    }
+
+    .video-container h2 {
+        font-size: 1.8em;
+    }
+
+    .contact-section {
+        padding: 40px 15px;
+    }
+
+    .contact-container h2 {
+        font-size: 1.8em;
+    }
+
+    .contact-container p {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8em;
+    }
+
+    .hero p {
+        font-size: 0.9em;
+    }
+
+    .feature h2 {
+        font-size: 1.2em;
+    }
+
+    .feature p {
+        font-size: 0.8em;
+    }
+
+    .video-container h2 {
+        font-size: 1.6em;
+    }
+
+    .contact-container h2 {
+        font-size: 1.6em;
+    }
 }
