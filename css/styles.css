@@ -8,6 +8,7 @@
     --hover-color: #3a38d0;
     --feature-bg-color: #252525;
     --feature-text-color: #d0d0d0;
+    --accent-color: #ff6b6b;
 }
 
 * {
@@ -21,6 +22,7 @@ body {
     color: var(--text-color);
     background-color: var(--background-color);
     line-height: 1.8;
+    transition: background-color 0.3s ease;
 }
 
 header {
@@ -40,11 +42,12 @@ header {
     font-size: 1.8em;
     font-weight: bold;
     color: var(--primary-color);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .logo:hover {
     transform: scale(1.05);
+    color: var(--accent-color);
 }
 
 nav ul {
@@ -63,7 +66,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: var(--primary-color);
+    color: var(--accent-color);
     transform: translateY(-2px);
 }
 
@@ -103,7 +106,7 @@ nav ul li a:hover {
 
 .secondary-btn:hover {
     background-color: rgba(74, 73, 224, 0.1);
-    color: var(--primary-color);
+    color: var(--accent-color);
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(74, 73, 224, 0.1);
 }
@@ -164,11 +167,12 @@ nav ul li a:hover {
     font-size: 3em;
     color: var(--primary-color);
     margin-bottom: 20px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .feature:hover i {
     transform: scale(1.1);
+    color: var(--accent-color);
 }
 
 .feature h2 {
@@ -305,4 +309,33 @@ html {
 /* Add a subtle gradient to the background for more depth */
 body {
     background: linear-gradient(to bottom, var(--background-color), #1a1a1a);
+}
+
+/* Add a nice hover effect to all interactive elements */
+a, .btn, .feature, .video-container video {
+    transition: all 0.3s ease;
+}
+
+a:hover, .btn:hover, .feature:hover, .video-container video:hover {
+    filter: brightness(1.1);
+}
+
+/* Add a subtle text shadow to headings for better readability */
+h1, h2, h3 {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Improve the contrast of the feature text */
+.feature p {
+    color: #e0e0e0;
+}
+
+/* Add a subtle border to the features for better separation */
+.feature {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Add a nice hover effect to the logo */
+.logo:hover {
+    text-shadow: 0 0 10px var(--primary-color);
 }
