@@ -30,6 +30,9 @@
             <a href="#" id="get-chrome-btn" class="btn secondary-btn">
                 <i class="fab fa-chrome"></i> Chrome Extension
             </a>
+            <button id="theme-toggle" class="btn secondary-btn">
+                <i class="fas fa-moon"></i>
+            </button>
         </div>
     </header>
 
@@ -38,7 +41,10 @@
         <div class="hero-content">
             <h1>Empower Your Team with AI-Driven Insights</h1>
             <p>Harness the power of AI to keep your team informed, engaged, and productive with real-time updates and intelligent collaboration tools.</p>
-            <a href="https://github.com/ameyasutar1/ManagerAI" class="btn primary-btn" target="_blank">Explore Manager.AI</a>
+            <div class="hero-buttons">
+                <a href="https://github.com/ameyasutar1/ManagerAI" class="btn primary-btn" target="_blank">Explore Manager.AI</a>
+                <a href="#demo-1" class="btn secondary-btn">Live Demo</a>
+            </div>
         </div>
     </section>
 
@@ -89,6 +95,49 @@
         </div>
     </section>
 
+    <section id="demo-1" class="video-section">
+        <div class="DemoVideo-Container">
+            <h2>Manager.AI in Action</h2>
+            <video id="mainVideo" controls>
+                <source src="images/Manager.AI Intro Video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p class="video-description">This video introduces Manager.AI and its key features. The next video demonstrates a live demo call.</p>
+        </div>
+        <div class="video-controls">
+            <button id="prevButton" class="nav-btn"><i class="fas fa-chevron-left"></i></button>
+            <button id="nextButton" class="nav-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <p class="navigation-hint">Use the arrows to switch between the introduction and demo call videos.</p>
+    </section>
+
+    <script>
+        const mainVideo = document.getElementById('mainVideo');
+        const prevButton = document.getElementById('prevButton');
+        const nextButton = document.getElementById('nextButton');
+        const videos = [
+            "images/Manager.AI Intro Video.mp4",
+            "images/Demo Video 1.mp4"
+        ];
+        let currentVideoIndex = 0;
+
+        function updateVideo() {
+            mainVideo.src = videos[currentVideoIndex];
+            mainVideo.load();
+            mainVideo.play();
+        }
+
+        prevButton.addEventListener('click', () => {
+            currentVideoIndex = (currentVideoIndex - 1 + videos.length) % videos.length;
+            updateVideo();
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+            updateVideo();
+        });
+    </script>
+
     <section id="contact" class="contact-section">
         <div class="contact-container">
             <h2>Contact Information</h2>
@@ -106,6 +155,22 @@
                 header.classList.add('header-small');
             } else {
                 header.classList.remove('header-small');
+            }
+        });
+
+        // Dark/Light Mode Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const icon = themeToggle.querySelector('i');
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            if (body.classList.contains('light-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
             }
         });
     </script>
