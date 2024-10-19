@@ -5,6 +5,7 @@
 ## Introduction
 **Manager AI** is not just another chatbot—it’s your virtual project manager, designed to transform the way teams collaborate and track progress. With advanced language understanding and voice capabilities, it offers a hands-free solution to managing complex tasks and staying updated with team efforts. Whether you're working on long-term projects or need real-time meeting assistance, Manager AI ensures that no detail is overlooked.
 
+[Explore Manager.AI Click here](https://ameyasutar1.github.io/ManagerAI/)
 ---
 
 ## Why Use Manager AI?
